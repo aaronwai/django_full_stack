@@ -15,7 +15,6 @@ if path.isfile(local_env_file):
 DEBUG = True   
 SITE_NAME= getenv('SITE_NAME')
 SECRET_KEY = getenv("DJANGO_SECRET_KEY", "2FqhCBRPtSQzslgwXE5QG_Opl-tNooV8DiiJFbUzO24oLo9-rhI") 
-'django-insecure-*7j$3b_h*%8$*8fbuqm9(vmnxirk=g_@ub6of+z#oc@9-rtn%g'
 
 
 
