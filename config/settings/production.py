@@ -17,4 +17,4 @@ SECRET_KEY = getenv("DJANGO_SECRET_KEY", )
 
 
 ALLOWED_HOSTS = []
-ADMINS= [["Admin", "aaron.lung.wai@gmail.com"]]
+ADMINS= [("Admin", "aaron.lung.wai@gmail.com"),]

@@ -223,7 +223,7 @@ staticfiles/
 
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+# copy from client's gitignore
 # dependencies
 !client/src/lib
 client/node_modules

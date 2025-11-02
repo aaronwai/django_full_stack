@@ -16,8 +16,8 @@ class UserAdmin(BaseUserAdmin):
     ordering = ["pkid"]
     fieldsets = (
         (_("Login Credentials"), {"fields": ("email", "password")}),
-        (_("Personal Information"), {"fields": ("first_name", "last_name", "username")}),
-        (_("Permissions"), {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions")}),
+        (_("Personal Info"), {"fields": ("first_name", "last_name", "username")}),
+        (_("Permissions and Groups"), {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions")}),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
-    add_fieldsets = ((None,{"classes": ("wide",),"fields": ("username", "email", "first_name", "last_name", "password1", "password2")}),)
+    add_fieldsets = ((None,{"classes": ("wide",),"fields": ("username", "email", "first_name", "last_name", "password1", "password2")},),)

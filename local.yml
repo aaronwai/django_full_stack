@@ -20,7 +20,8 @@ services:
       - estate_prod_nw
   postgres:
     build:
-      context: ./docker/local/postgres
+      context: .
+      dockerfile: ./docker/local/postgres/Dockerfile
     image: estate_prod_postgres
     container_name: estate_prod_postgres
     ports:
@@ -54,7 +55,6 @@ services:
       dockerfile: ./docker/local/Dockerfile
     container_name: estate_client
     image: estate_client
-
     ports:
       - "3000:3000"
     volumes:

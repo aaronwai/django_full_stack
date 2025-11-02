@@ -8,7 +8,7 @@ ARG BUILD_ENVIRONMENT=local
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends   \
     build-essential \
     libpq-dev \
     && apt-get clean && \
@@ -29,15 +29,15 @@ ARG APP_HOME=/app
 
 ENV PYTHONDONTWRITEBYTECODE=1
 
-ENV PYTHONBUFFERED=1
+ENV PYTHONUNBUFFERED=1
 
-ENV BUILD_ENVIRONMENT=${BUILD_ENVIRONMENT}
+ENV BUILD_ENV=${BUILD_ENVIRONMENT}
 
 WORKDIR ${APP_HOME}
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends  \
     sudo git bash-completion nano ssh
 
 RUN addgroup --system django && \
@@ -54,9 +54,9 @@ RUN apt-get update && \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=python-build-stage /usr/src/app/wheels /wheels    
+COPY --from=python-build-stage /usr/src/app/wheels /wheels/    
 
-RUN pip install --no-cache-dir --no-index --find-links=/wheels /wheels/* \
+RUN pip install --no-cache-dir --no-index --find-links=/wheels/ /wheels/* \
     && rm -rf /wheels/ 
 
 COPY --chown=django:django ./docker/local/django/entrypoint.sh /entrypoint 
