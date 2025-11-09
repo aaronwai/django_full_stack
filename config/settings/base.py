@@ -130,6 +130,12 @@ CELERY_TASK_TIME_LIMIT = 5 * 60
 CELERY_TASK_SOFT_TIME_LIMIT = 60
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_WORKER_SEND_TASK_EVENTS = True
+
+CELERY_BEAT_SCHEDULE = {
+    "update-reputation-every-day": {
+        "task": "update_all_reputations",
+}
+}
 CLOUDINARY_CLOUD_NAME= getenv('CLOUDINARY_CLOUD_NAME')
 CLOUDINARY_API_KEY= getenv('CLOUDINARY_API_KEY')
 CLOUDINARY_API_SECRET= getenv('CLOUDINARY_API_SECRET')
