@@ -29,7 +29,7 @@ THIRD_PARTY_APPS = [
     "taggit","phonenumber_field","social_django","cloudinary"
 ]
 
-LOCAL_APPS = ["core_apps.common","core_apps.users","core_apps.posts","core_apps.profiles","core_apps.ratings","core_apps.issues"]
+LOCAL_APPS = ["core_apps.common","core_apps.users","core_apps.posts","core_apps.profiles","core_apps.ratings","core_apps.issues", "core_apps.apartments"]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
