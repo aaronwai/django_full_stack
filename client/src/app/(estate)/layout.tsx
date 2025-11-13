@@ -14,10 +14,9 @@ export default function layout({ children }: LayoutProps) {
 					Left Navbar
 				</div>
 				<section className="flex min-h-screen flex-1 flex-col px-4 pb-6 pt-24 sm:px-6 lg:px-8 lg:pt-32">
-					{/* placeholder right navbar component */}
 					<div>{children}</div>
 				</section>
-
+				{/* placeholder right navbar component */}
 				<div className="dark:text-pumpkin hidden text-xl md:block">
 					Right Navbar
 				</div>
