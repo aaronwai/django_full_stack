@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import ReduxProvider from "@/lib/redux/provider";
 import Toast from "@/components/shared/Toast";
+import { PersistAuth } from "@/utils";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -21,6 +22,7 @@ export default function RootLayout({
 			<body className={`${openSans.variable} ${robotoSlab.variable}`}>
 				<Toast />
 				<ReduxProvider>
+					<PersistAuth />
 					<ThemeProvider
 						attribute="class"
 						defaultTheme="system"
