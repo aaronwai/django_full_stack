@@ -24,11 +24,12 @@ import {
 import { formatDate } from "@/utils";
 import ProtectedRoute from "../shared/ProtectedRoutes";
 import { Avatar, AvatarImage } from "../ui/avatar";
+import { useAppSelector } from "@/lib/redux/hooks/typedHooks";
 
 function TenantCardContent() {
 	const { theme } = useTheme();
-
-	const { data, isLoading } = useGetAllUsersQuery({});
+	const searchTerm = useAppSelector((state) => state.user.searchTerm);
+	const { data, isLoading } = useGetAllUsersQuery({ searchTerm });
 
 	if (isLoading) {
 		return (
