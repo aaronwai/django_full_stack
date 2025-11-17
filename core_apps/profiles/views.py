@@ -17,7 +17,7 @@ from .tasks import upload_avatar_to_cloudinary
 User = get_user_model()
 
 class StandardResultsSetPagination(PageNumberPagination):
-    page_size = 9
+    page_size = 9 
     page_size_query_param = 'page_size'
     max_page_size = 100
 
